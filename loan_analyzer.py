@@ -211,12 +211,11 @@ Output this list of inexpensive loans to a csv file
 header = ["loan_price", "remaining_months", "repayment_interval", "future_value"]
 
 # Set the output file path
-output_path = Path(""C:/Users/jtaga/Desktop/Challenge_one/Challege_files/inexpensive_loans.csv")
+output_path = Path("C:/Users/jtaga/Desktop/Challenge_one/inexpensive_loans.csv")
 
 # @TODO: Use the csv library and `csv.writer` to write the header row
 # and each row of `loan.values()` from the `inexpensive_loans` list.
 # YOUR CODE HERE!
-with open(output_path, 'w', newline='') as csvfile:
-    csvwriter + csv.writer(csvfile)
-    for row in inexpensive_loans:
-        csvwriter.writerow(row.values())
+with open(output_path, 'w') as csvfile:
+    csvwriter = csv.writer(csvfile, delimiter=",")
+    csvwriter.writerow(header)
