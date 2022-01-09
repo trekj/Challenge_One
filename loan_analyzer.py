@@ -219,3 +219,6 @@ output_path = Path("C:/Users/jtaga/Desktop/Challenge_one/inexpensive_loans.csv")
 with open(output_path, 'w') as csvfile:
     csvwriter = csv.writer(csvfile, delimiter=",")
     csvwriter.writerow(header)
+    for row in inexpensive_loans:
+        csvwriter.writerow(row.values())
+
